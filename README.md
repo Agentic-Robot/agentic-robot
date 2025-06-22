@@ -31,9 +31,26 @@ Before running Agentic Robot, please make sure the required environments are pro
 
 🧪 Experiments are conducted in the [LIBERO](https://github.com/moojink/openvla-oft/blob/main/LIBERO.md) simulation environment. Make sure to install LIBERO and its dependencies as described in their official documentation.
 
+## ## 🚀 Implementation
+
+Our training framework consists of two stages:
+
+1. Stage I: Decompose the complex task with LRM.  
+2. Stage II: Evaluate Agentic Robot with VLA and VLM.
+
+## Task Devision
+
+Here, we take Deepseek-V3 as an example to decompose the complex task.
+
+```python
+python experiments/robot/libero/ds.py
+```
+
+**For convenience, we provide a test case that calls the LRM once, then generates a hard-coded plan and replaces it in the main.py file. For handling multiple tasks, we can add a function to call the LRM in main.py.**
+
 ## 📊 Evaluation
 
-After training, we evaluate the model’s behavior both with and without trigger conditions to measure task performance and attack effectiveness.
+We evaluate the Agentic Robot on LIBERO benchmark with VLM (QwenVL-2.5) and VLA (OpenVLA).
 
 Navigate to the evaluation directory:
 ```python
